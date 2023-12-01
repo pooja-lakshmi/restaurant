@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <h1>Registration</h1>
+    <script type="text/javascript">
+        function validate(){
+            var fname=document.getElementById('fnme').value;
+            var lname=document.getElementById('lnme').value;
+            var mail=document.getElementById('mid').value;
+            var age=document.getElementById('age').value;
+            var dob=document.getElementById('dob').value;
+            var gm=document.getElementById('m').value;
+            var gf=document.getElementById('f').value;
+            var x=0;
+            if(fname=="" || lname=="" || mail=="" || age=="" || dob=="" || gender==""){
+                alert("YOU SHOULD FILL OUT ALL DETAILS");
+            }
+            if(validateg(gm,gf)){
+            function validateg(gm,gf){
+             if(gm.checked || gf.checked){
+                x++;   
+             }
+             if(x==0){
+                alert("select gender");
+                return false;
+             }
+
+            else{
+                alert("REGISTRATION SUCCESSFULL");   
+            }
+            return false;
+        }
+        }
+        if(validatef(fname)){
+         function validatef(fname){
+            var l=/^[A-Za-z]+$/;
+            if (fname.value.match(l) || lname.value.match(l)){
+                return true;
+            }
+            else{
+                alert("invalid name");
+                return false;
+            }
+        }
+    }
+    if(validatef(lname)){
+         function validatef(fname){
+            var l=/^[A-Za-z]+$/;
+            if (fname.value.match(l) || lname.value.match(l)){
+                return true;
+            }
+            else{
+                alert("invalid name");
+                return false;
+            }
+        }
+    }
+}
+    </script>
+</head>
+<body>
+    <form method="GET" name="f" onsubmit="return validate()">
+        <b>First Name :</b>
+        <input type="text" id="fnme" name="fnme"><br><br>
+        <b>Last Name :</b>
+        <input type="text" id="lnme" name="lnme"><br><br>
+        <b>Email ID :</b>
+        <input type="email" id=mid name="mid"><br><br>
+        <b>Age :</b>
+        <input type="text" id="age" name="age"><br><br>
+        <b>DOB :</b>
+        <input type="date" id="dob" name="dob"><br><br>
+        <b>Gender :</b>
+        <input type="radio" id=m name="gender">Male
+        <input type="radio" id=f name="gender">Female<br><br>
+        <b>Course:</b>
+        <input type="radio" id=rad name="course">IT<br>
+        <input type="radio" id=rad1 name="course">CSE<br>
+        <input type="radio" id=rad2 name="course">MECH<br>
+        <input type="radio" id=rad3 name="course">ECE<br>
+        <input type="radio" id=rad4 name="course">EEE<br>
+        <b>Year of studying:</b>
+        <select>
+            <option value="1st">I Year</option>
+            <option value="2nd">II Year</option>
+            <option value="3rd">III Year</option>
+            <option value="4th">IV Year</option>
+        </select><br><br>
+        <b>Select Course to Register:<dl></b>
+        <input type="checkbox" id="cb1" name="cb1">javascripts<br>
+        <input type="checkbox" id="cb2" name="cb2">c++<br>
+        <input type="checkbox" id="cb3" name="cb3">Java<br>
+        <input type="checkbox" id="cb5" name="cb5">Python<br>
+    </dl>
+        <input type="submit" value="click here for payment">
+    </form><br>
+    <input type="button" value="Logout">
+</body>
+</html>
